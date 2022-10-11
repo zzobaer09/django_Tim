@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+
+{% block titel %} Show List {% endblock %}
+
+{% block content %}
+	<h1>{{ls.name}}</h1>
+	<ol>
+		{% for i in ls.item_set.all %}
+			{% if i.complete == True %}
+				<li> {{i.text}} - COMPLETE</li>
+
+				{% else %} <li> {{i.text}} - INCOPLETE </li>
+			
+			{% endif%}
+		{% endfor%}
+	</ol>
+
+{% endblock%}
+
