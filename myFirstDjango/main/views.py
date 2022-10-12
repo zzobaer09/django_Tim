@@ -15,4 +15,3 @@ def index(response , id):
 def home(res):
 	return HttpResponse(render(res , "main/home.html", {}))	
 
-
