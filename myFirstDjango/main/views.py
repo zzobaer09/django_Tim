@@ -22,9 +22,14 @@ def create(response):
 	if response.method == "POST":
 		form = CreateNewList(response.POST)
 		if form.is_valid():
+
 			name = form.cleaned_data["name"]
+			text = form.cleaned_data["item"]
+			complete = form.cleaned_data["check"]
+
 			t = ToDoList(name=name)
 			t.save()
+			t.item_set.create(text=text , complete=complete)
 
 			return HttpResponseRedirect("/%i"  %t.id)
 	else:
