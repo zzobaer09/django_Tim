@@ -3,9 +3,8 @@
 
 {% block title %} Create List {% endblock %}
 
-
-
 {% block content %}
+
 	Create Page
 	<form method="POST" , action="/create/">
 		{% csrf_token%}
@@ -14,4 +13,3 @@
 	</form>
 
 {% endblock %}
-
